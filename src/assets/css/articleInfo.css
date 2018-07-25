@@ -1,0 +1,50 @@
+h1 {
+  margin-top: 10px!important;
+}
+
+.el-dialog__header {
+  padding: 0 !important;
+}
+
+.art p{
+  line-height: 25px!important;
+}
+
+.art_head {
+  text-align: center!important;
+  color: #000!important;
+  font-size: 17px!important;
+  font-weight: 600!important;
+}
+
+.ql-align-center {
+  text-align: center!important;
+}
+
+.art_author {
+  text-align: center;
+  color: #888080;
+}
+
+img {
+  max-width: 100%!important;
+}
+
+.item {
+  /*margin-top: 10px;*/
+  margin-right: 10px!important;
+  float: right!important;
+}
+
+.text_item {
+  margin-top: 3px!important;
+  margin-right: 10px!important;
+}
+
+.el-card__body {
+  padding: 3px!important;
+}
+
+* {
+  -webkit-overflow-scrolling: touch!important;
+}

@@ -1,0 +1,22 @@
+h1{
+  margin-top: 10px!important;
+}
+.el-dialog__header{
+  padding: 0!important;
+}
+.el-dialog__body{
+  padding: 0!important;
+}
+.mint-button--large{
+  width: 90%!important;
+  margin:0px 5%!important;
+}
+.mint-field{
+  margin: 10px 0!important;
+}
+*{
+  -webkit-overflow-scrolling : touch!important;
+}
+a{
+  text-decoration: none!important;
+}

@@ -1,0 +1,21 @@
+h1{
+  margin-top: 10px!important;
+}
+.el-dialog__header{
+  padding: 0!important;
+}
+.cont{
+  height: 40px!important;
+  /*overflow: hidden;!*内容超出后隐藏*!*/
+  /*text-overflow: ellipsis;!* 超出内容显示为省略号*!*/
+  /*white-space: nowrap;!*文本不进行换行*!*/
+}
+*{
+  -webkit-overflow-scrolling : touch!important;
+}
+.my-search-input {
+  width: 100%;
+  position: fixed;
+  top:40px;
+  z-index: 9999;
+}

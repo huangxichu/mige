@@ -1,0 +1,9 @@
+*{
+  -webkit-overflow-scrolling : touch!important;
+}
+.mint-popup .v-modal{
+  display: none!important;
+}
+a{
+  text-decoration: none!important;
+}
