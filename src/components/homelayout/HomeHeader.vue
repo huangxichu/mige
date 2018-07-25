@@ -23,8 +23,8 @@
             <!--<el-menu-item index="2-4-3">选项3</el-menu-item>-->
             <!--</el-submenu>-->
             <!--</el-submenu>-->
-            <el-menu-item index="3">新闻资讯</el-menu-item>
-            <el-menu-item index="4">产品中心</el-menu-item>
+            <el-menu-item index="3"><router-link to="/news">新闻资讯</router-link></el-menu-item>
+            <el-menu-item index="4"><router-link to="/product">产品中心</router-link></el-menu-item>
             <el-menu-item index="5">服务项目</el-menu-item>
             <el-menu-item index="6">在线留言</el-menu-item>
             <el-menu-item index="7"><router-link to="/recruit">人才招聘</router-link></el-menu-item>

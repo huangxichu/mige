@@ -24,7 +24,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product1.jpg" alt="规划模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p4/12.html" target="_blank">规划模型</a></h2>
+                            <h2>规划模型</h2>
                           </div>
                         </div>
                       </li>
@@ -32,7 +32,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product2.jpg" alt="工业机械模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p4/13.html" target="_blank">工业机械模型</a></h2>
+                            <h2>工业机械模型</h2>
                           </div>
                         </div>
                       </li>
@@ -40,7 +40,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product3.jpg" alt="户型模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p3/11.html" target="_blank">户型模型</a></h2>
+                            <h2>户型模型</h2>
                           </div>
                         </div>
                       </li>
@@ -48,7 +48,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product4.jpg" alt="工业机械模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p2/2.html" target="_blank">工业机械模型</a></h2>
+                            <h2>工业机械模型</h2>
                           </div>
                         </div>
                       </li>
@@ -56,7 +56,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product5.jpg" alt="住宅模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p1/16.html" target="_blank">住宅模型</a></h2>
+                            <h2>住宅模型</h2>
                           </div>
                         </div>
                       </li>
@@ -64,7 +64,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="/a/product/p1/15.html" target="_blank"><img src="../../assets/img/product6.jpg" alt="壁挂区位模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p1/15.html" target="_blank">壁挂区位模型</a></h2>
+                            <h2>壁挂区位模型</h2>
                           </div>
                         </div>
                       </li>
@@ -72,7 +72,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product7.jpg" alt="地形地貌沙盘模型"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p1/14.html" target="_blank">地形地貌沙盘模型</a></h2>
+                            <h2>地形地貌沙盘模型</h2>
                           </div>
                         </div>
                       </li>
@@ -80,7 +80,7 @@
                         <div class="product-item">
                           <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product8.jpg" alt="地产动画"></a></div>
                           <div class="portfolio-title">
-                            <h2><a href="/a/product/p1/1.html" target="_blank">地产动画</a></h2>
+                            <h2>地产动画</h2>
                           </div>
                         </div>
                       </li>
@@ -89,7 +89,7 @@
                   </div>
 
                 </div>
-                <div class="module-full-screen-more"><a href="/a/product/" target="_blank">更多产品</a></div>
+                <div class="module-full-screen-more"><router-link to="/product">更多产品</router-link></div>
               </el-main>
             </el-container>
             <!--<el-container style="margin-top: 20px!important;">-->
