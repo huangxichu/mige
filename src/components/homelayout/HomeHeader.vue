@@ -85,7 +85,7 @@
     float: right;
     padding:20px;
     width: 980px;
-    background-image: url(../../assets/img/top_bg.jpg);
+    background-image: url(../../assets/img/top_bg_1.jpg);
   }
   .header_btm{
     height: 490px;
