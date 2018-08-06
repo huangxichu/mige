@@ -1,10 +1,8 @@
-import {post} from '../../../axios/ajax'
+import {post,put_head} from '../../../axios/ajax'
 import { removeLoginUser, removeTokenCookie } from '../../../assets/js/assist'
 const loginBaseUrl = '/api'
-import axios from 'axios'
-import qs from 'qs'
 export const loginUrls = {
-  login: loginBaseUrl + '/cswb/login.json',
+  login: loginBaseUrl + '/user/login',
   logout:  '/'
 }
 
@@ -14,12 +12,66 @@ export const loginUrls = {
  */
 // export const requestLogin = params => { return post(loginUrls.login, params) }
 export const requestLogin = params => {
-  return axios.post(loginUrls.login,qs.stringify(params)).then(function(res){
-    //对返回的数据res进行处理的逻辑
-    return res
-  }).catch(() => {
-    console.info("error")
-  })
+  // return axios.get(loginUrls.login,
+  //   {
+  //     headers: {
+  //       'salt': '123456',
+  //     },
+  //     params: params
+  //   }
+  // ).then(res => {
+  //     //对返回的数据res进行处理的逻辑
+  //     return res
+  // }).catch(e => {
+  //   console.info("error")
+  // })
+  return put_head(loginUrls.login,params, {
+    'salt': 'Bearer'
+  });
+  // return axios.put(loginUrls.login,
+  //   qs.stringify(params),
+  //   {
+  //     headers: {
+  //       'salt': 'Bearer'
+  //     }
+  //   }
+  // ).then(res => {
+  //     //对返回的数据res进行处理的逻辑
+  //     return res
+  // }).catch(e => {
+  //   console.info("error")
+  // })
+
+  // params.salt = "123456"
+  // return axios({
+  //   method: "GET",
+  //   url: loginUrls.login,
+  //   data: {},
+  //   headers: params
+  // }).then(function(res){
+  //   //对返回的数据res进行处理的逻辑
+  //   return res
+  // }).catch(() => {
+  //   console.info("error")
+  // })
+
+
+  // axios.post(urlString,
+  //   {
+  //     data: data,
+  //     ...
+  //   },
+  //   {
+  //     headers: {
+  //       'Authorization': 'Bearer ' + token,
+  //       "Cookie" : 'sessionId=' + sessionId + '; recId=' + recId,
+  //       ...
+  //     }
+  //   }
+  // )
+  //   .then(res => fn)
+  //   .catch(e => fn)
+
 }
 /**
  * 登出请求

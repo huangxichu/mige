@@ -38,6 +38,7 @@ Vue.component(DatetimePicker.name, DatetimePicker);
 
 axios.defaults.withCredentials=true
 Vue.prototype.$axios = axios
+Vue.prototype.$companyCode = 'gwHvj2penyCpFW1j'
 /* eslint-disable no-new */
 
 let vue = new Vue({

@@ -1,4 +1,3 @@
-import {get2} from '../../../axios/ajax'
 import axios from 'axios'
 import qs from 'qs'
 

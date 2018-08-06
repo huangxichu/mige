@@ -15,7 +15,7 @@ const menuType = {
  * 不做登录校验的路由集合
  * @type {[*]}
  */
-const unLoginCheckRoutes = ['/','/index','/about','/recruit','/contact','/news','/product']
+const unLoginCheckRoutes = ['/','/login','/index','/about','/recruit','/contact','/news','/product']
 
 let router = new Router({
   mode: 'history',
@@ -58,6 +58,12 @@ let router = new Router({
       meta:{auth:false}
     },
     {
+      path: '/login',
+      name: 'Login',
+      component: Login => require(['../pages/login/Login'],Login),
+      meta:{auth:false}
+    },
+    {
       path: '/sys',
       name: 'sys',
       component: SysManage,
@@ -88,7 +94,7 @@ router.beforeEach( (to, from, next) => {
     let user = getLoginUser()
     if (user === null) {
       removeTokenCookie()
-      next('/')
+      next('/login')
     }else{
       let _route = {}
       router.options.routes.forEach(r => {

@@ -3,7 +3,7 @@
     <div style="width: 300px;">
       <div class="row p-row">
         <div class="p-login-input">
-          <button class="p-login-submit-button">三湘名医在线</button>
+          <button class="p-login-submit-button">CMS管理系统</button>
         </div>
       </div>
       <div class="row p-row">
@@ -39,21 +39,24 @@
     },
     methods: {
       doLogin () {
+        var _this = this
+//        $companyCode
         if (this.username === '' || this.password === '') {
           this.$notify.warning({
             title: '请输入账号和密码!'
           })
           return
         }
-        requestLogin({loginCode: this.username, password: SHA2(this.password)}).then(res => {
-          if(res.data.resultCode === '1'){
-            var user = res.data.data
-            user.token = user.code
-            setLoginUser(res.data.data)
-            this.$router.push('/sys')
+        requestLogin({b: _this.username, c: SHA2(_this.password),a:_this.$companyCode}).then(res => {
+          if(res.data.code === '0'){
+            console.info(res)
+            var user = res.data.data.userInfo
+            user.token = res.data.data.token
+            setLoginUser(user)
+            _this.$router.push('/sys')
           }else{
             var msg = res.data.message;
-            this.$notify.warning({
+            _this.$notify.warning({
               title: msg
             })
           }
