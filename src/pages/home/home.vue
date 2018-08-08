@@ -1,12 +1,49 @@
 <template>
   <div class="mg_home"  :style="innerStyle">
-    <table width="980" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
-      <tbody>
-      <tr>
-        <el-container>
-          <el-header style="height: 597px!important;">
-            <home-header></home-header>
-          </el-header>
+    <home-header></home-header>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="../../assets/img/home_bg1.jpg" >
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img src="../../assets/img/home_bg1.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img src="../../assets/img/home_bg1.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+        <div class="item">
+          <img src="../../assets/img/home_bg1.jpg">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <el-container>
           <el-main class="home_main">
             <el-container style="margin-top: 0px!important;">
               <el-main class="product_main">
@@ -210,9 +247,6 @@
             <home-footer></home-footer>
           </el-footer>
         </el-container>
-      </tr>
-      </tbody>
-    </table>
     <div class="gotop-wrapper" v-if="show_top_btn == 1"><a href="javascript:;" class="fixed-gotop gotop" style="display: block;" @click="toTop"></a></div>
   </div>
 </template>

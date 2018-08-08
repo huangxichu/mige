@@ -1,58 +1,52 @@
 <template>
   <el-container class="home_header">
-    <el-header class="header_logo">
-      <div style="" class="mg_header">
-        <div style="float: right;font-size: 12px;"><span onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.xxxx.com');" style="CURSOR: hand">设为首页</span>　┃  <router-link to="/contact">联系我们</router-link>　┃  <span style="CURSOR:hand" onclick="window.external.addFavorite('http://www.xxxx.com','湖南米格模型设计有限公司')">加入收藏</span></div>
-      </div>
-    </el-header>
-    <el-main class="header_btm">
-      <el-container>
-        <el-main class="mg_main_menu">
-          <el-menu class="el-menu-demo" mode="horizontal" >
-            <el-menu-item index="1"><router-link to="/index">首页</router-link></el-menu-item>
-            <el-menu-item index="2"><router-link to="/about">公司介绍</router-link></el-menu-item>
-            <!--<el-submenu index="2">-->
-            <!--<template slot="title">公司介绍</template>-->
-            <!--<el-menu-item index="2-1">选项1</el-menu-item>-->
-            <!--<el-menu-item index="2-2">选项2</el-menu-item>-->
-            <!--<el-menu-item index="2-3">选项3</el-menu-item>-->
-            <!--<el-submenu index="2-4">-->
-            <!--<template slot="title">选项4</template>-->
-            <!--<el-menu-item index="2-4-1">选项1</el-menu-item>-->
-            <!--<el-menu-item index="2-4-2">选项2</el-menu-item>-->
-            <!--<el-menu-item index="2-4-3">选项3</el-menu-item>-->
-            <!--</el-submenu>-->
-            <!--</el-submenu>-->
-            <el-menu-item index="3"><router-link to="/news">新闻资讯</router-link></el-menu-item>
-            <el-menu-item index="4"><router-link to="/product">产品中心</router-link></el-menu-item>
-            <el-menu-item index="5">服务项目</el-menu-item>
-            <el-menu-item index="6">在线留言</el-menu-item>
-            <el-menu-item index="7"><router-link to="/recruit">人才招聘</router-link></el-menu-item>
-            <el-menu-item index="8"><router-link to="/contact">联系我们</router-link></el-menu-item>
-            <!--<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>-->
-          </el-menu>
-        </el-main>
-        <el-footer class="mg_carousel">
-          <el-carousel height="150px" class="mg_carousel">
-            <el-carousel-item>
-              <img src="../../assets/img/home_bg1.jpg" style="height: 390px;">
-            </el-carousel-item>
-            <el-carousel-item>
-              <img src="../../assets/img/home_bg1.jpg" style="height: 390px;">
-            </el-carousel-item>
-            <el-carousel-item>
-              <img src="../../assets/img/home_bg1.jpg" style="height: 390px;">
-            </el-carousel-item>
-            <el-carousel-item>
-              <img src="../../assets/img/home_bg1.jpg" style="height: 390px;">
-            </el-carousel-item>
-            <el-carousel-item>
-              <img src="../../assets/img/home_bg1.jpg" style="height: 390px;">
-            </el-carousel-item>
-          </el-carousel>
-        </el-footer>
-      </el-container>
-    </el-main>
+    <!--<el-header class="header_logo">-->
+      <!--<div style="" class="mg_header">-->
+        <!--<div style="float: right;font-size: 12px;"><span onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.xxxx.com');" style="CURSOR: hand">设为首页</span>　┃  <router-link to="/contact">联系我们</router-link>　┃  <span style="CURSOR:hand" onclick="window.external.addFavorite('http://www.xxxx.com','湖南米格模型设计有限公司')">加入收藏</span></div>-->
+      <!--</div>-->
+    <!--</el-header>-->
+    <nav class="navbar navbar-default" style="width: 100%;margin-bottom: 0!important;">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">米格</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">公司介绍</a></li>
+            <li><a href="#">新闻资讯</a></li>
+            <li><a href="#">产品中心</a></li>
+            <li><a href="#">服务项目</a></li>
+            <li><a href="#">在线留言</a></li>
+            <li><a href="#">人才招聘</a></li>
+            <li><a href="#">联系我们</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.xxxx.com');"  style="CURSOR: hand">设为首页</a></li>
+            <li><a href="javascript:window.external.addFavorite('http://www.xxxx.com','湖南米格模型设计有限公司');"  style="CURSOR: hand">加入收藏</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
   </el-container>
 </template>
 
@@ -69,7 +63,7 @@
     },
     mounted(){
 
-    },
+    }
   }
 
 </script>
@@ -84,7 +78,6 @@
     vertical-align: top;
     float: right;
     padding:20px;
-    width: 980px;
     background-image: url(../../assets/img/top_bg_1.jpg);
   }
   .header_btm{
@@ -109,5 +102,26 @@
   }
   .mg_carousel .el-carousel__container{
     height: 390px!important;
+  }
+
+  .navbar-default {
+    background-color: #15a701!important;
+    border-color: #15a701!important;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #ffffff!important;
+  }
+  .navbar-default .navbar-brand {
+    color: #ffffff!important;
+  }
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff!important;
+    background-color: #48b104!important;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff!important;
+  }
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #48b104!important;
   }
 </style>

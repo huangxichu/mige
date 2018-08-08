@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/js/collapse.js'
 import 'font-awesome/css/font-awesome.min.css'
 import './assets/css/ping.css'
 import './assets/css/jsplumb.css'
@@ -16,8 +17,6 @@ import JsEncrypt from 'jsencrypt'
 import {Button,Radio, InfiniteScroll, Header, Field, Search, Cell,
   Popup, TabContainerItem, TabContainer, TabItem, Navbar, DatetimePicker} from 'mint-ui'
 import 'mint-ui/lib/style.css'
-
-
 
 
 Vue.config.productionTip = false
