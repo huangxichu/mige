@@ -19,7 +19,7 @@ module.exports = {
         }
       },
       '/api': {
-        target: 'http://172.16.10.100:8080/cms',
+        target: 'http://172.16.10.100:8110/cms',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

@@ -98,6 +98,14 @@ function getLoginUser () {
 }
 export {getLoginUser}
 
+function checkLoginUser () {
+  var user = getLoginUser()
+  if(user == null || user == undefined){
+    return false;
+  }
+}
+export {checkLoginUser}
+
 /**
  * 获取登录用户页面元素权限信息
  */

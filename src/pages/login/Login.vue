@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import {requestLogin} from './api'
+  import {requestLogin,getKey} from './api'
   import { setLoginUser } from '../../assets/js/assist'
   import {SHA2} from '../../assets/js/sha'
   import Vue from 'vue'
@@ -34,34 +34,57 @@
     data () {
       return {
         username: '',
-        password: ''
+        password: '',
+        publicKey:''
       }
     },
     methods: {
       doLogin () {
         var _this = this
-//        $companyCode
         if (this.username === '' || this.password === '') {
           this.$notify.warning({
             title: '请输入账号和密码!'
           })
           return
         }
-        requestLogin({b: _this.username, c: SHA2(_this.password),a:_this.$companyCode}).then(res => {
-          if(res.data.code === '0'){
-            console.info(res)
-            var user = res.data.data.userInfo
-            user.token = res.data.data.token
-            setLoginUser(user)
-            _this.$router.push('/sys')
-          }else{
-            var msg = res.data.message;
-            _this.$notify.warning({
-              title: msg
-            })
+//        getKey({}).then(res => {
+//          if(res.code === '0'){
+//            _this.publicKey = res.data
+//            console.info(_this.publicKey)
+            var c = SHA2(_this.password);
+//            let encrypt = new _this.$jsEncrypt()
+//            encrypt.setPublicKey(_this.publicKey);
+//            encrypt.setPublicKey('-----BEGIN PUBLIC KEY-----\n'+
+//              _this.publicKey+
+//'\n-----END PUBLIC KEY-----')
+//            var encryptData = encrypt.encrypt(_this.password);//加密后的字符串
+            requestLogin({b: _this.username, c: c,a:_this.$companyCode,p:_this.publicKey}).then(res => {
+//              console.info(res)
+              if(res.data.code === '0'){
+                var user = res.data.data.userInfo
+                user.token = res.data.data.token
+                setLoginUser(user)
+                _this.$router.push('/sys')
+              }else if(res.data.code === '2002'){
+                _this.doLogin()
+              }else{
+                var msg = res.data.message;
+                _this.$notify.warning({
+                  title: msg
+                })
+              }
+            }).catch(this.handleError)
           }
-        }).catch(this.handleError)
-      }
+//        }).catch(this.handleError)
+//      }
+    },
+    mounted(){
+      var _this = this
+//      getKey({}).then(res => {
+//        if(res.code === '0'){
+//          _this.publicKey = res.data
+//        }
+//      }).catch(this.handleError)
     }
   }
 </script>

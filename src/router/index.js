@@ -39,12 +39,12 @@ let router = new Router({
       component: Contact => require(['../pages/contact/Contact'],Contact),
       meta:{auth:false}
     },
-    {
-      path: '/news',
-      name: 'News',
-      component: News => require(['../pages/news/News'],News),
-      meta:{auth:false}
-    },
+    // {
+    //   path: '/news',
+    //   name: 'News',
+    //   component: News => require(['../pages/news/News'],News),
+    //   meta:{auth:false}
+    // },
     {
       path: '/product',
       name: 'Product',
@@ -70,7 +70,8 @@ let router = new Router({
       type: menuType.header,
       meta:{auth:true},
       children: [
-        {path: 'article', name: '资讯管理', component: SysManage.Article, type: menuType.left,meta:{auth:true}},
+        {path: 'newsCategory', name: '新闻类型', component: SysManage.NewsCategory, type: menuType.left,meta:{auth:true}},
+        {path: 'news', name: '新闻管理', component: SysManage.Article, type: menuType.left,meta:{auth:true}},
         // {path: 'role', name: '栏目管理', component: SysManage.Article, type: menuType.left,meta:{auth:true}},
         {path: 'schedue', name: '排班管理', component: SysManage.SCHEDUE, type: menuType.left,meta:{auth:true}}
       ]

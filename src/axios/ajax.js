@@ -47,3 +47,17 @@ export const put_head = (url, params,headers) => {
     console.info("error")
   })
 }
+
+export const delete_head = (url, params,headers) => {
+  return axios.delete(url,
+    {
+      headers: headers,
+      params: params
+    }
+  ).then(res => {
+    //对返回的数据res进行处理的逻辑
+    return res
+  }).catch(e => {
+    console.info("error")
+  })
+}

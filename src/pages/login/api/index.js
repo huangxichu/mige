@@ -1,8 +1,9 @@
-import {post,put_head} from '../../../axios/ajax'
+import {post,put_head,get} from '../../../axios/ajax'
 import { removeLoginUser, removeTokenCookie } from '../../../assets/js/assist'
 const loginBaseUrl = '/api'
 export const loginUrls = {
   login: loginBaseUrl + '/user/login',
+  getKey: loginBaseUrl + '/user/getPk',
   logout:  '/'
 }
 
@@ -26,7 +27,7 @@ export const requestLogin = params => {
   //   console.info("error")
   // })
   return put_head(loginUrls.login,params, {
-    'salt': 'Bearer'
+    'salt': 'Test'
   });
   // return axios.put(loginUrls.login,
   //   qs.stringify(params),
@@ -81,4 +82,8 @@ export const requestLogout = params => {
   removeTokenCookie()
   removeLoginUser()
   return post(loginUrls.logout, params)
+}
+
+export const getKey = params => {
+  return get(loginUrls.getKey,params);
 }

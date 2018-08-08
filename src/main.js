@@ -11,6 +11,8 @@ import 'font-awesome/css/font-awesome.min.css'
 import './assets/css/ping.css'
 import './assets/css/jsplumb.css'
 import MyPlugin from './assets/js/plugin'
+import JsEncrypt from 'jsencrypt'
+
 import {Button,Radio, InfiniteScroll, Header, Field, Search, Cell,
   Popup, TabContainerItem, TabContainer, TabItem, Navbar, DatetimePicker} from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -39,6 +41,7 @@ Vue.component(DatetimePicker.name, DatetimePicker);
 axios.defaults.withCredentials=true
 Vue.prototype.$axios = axios
 Vue.prototype.$companyCode = 'gwHvj2penyCpFW1j'
+Vue.prototype.$jsEncrypt = JsEncrypt
 /* eslint-disable no-new */
 
 let vue = new Vue({

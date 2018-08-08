@@ -1,7 +1,7 @@
 <template>
   <div class="row p-row p-header"  id="head">
     <div class="p-logo">
-      长沙晚报微信公众号管理系统
+      CMS管理系统
     </div>
     <div class="p-header-navbar">
       <ul>
