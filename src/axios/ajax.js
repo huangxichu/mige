@@ -48,6 +48,20 @@ export const put_head = (url, params,headers) => {
   })
 }
 
+export const put_head_upload = (url, params,headers) => {
+  return axios.put(url,
+    params,
+    {
+      headers: headers
+    }
+  ).then(res => {
+    //对返回的数据res进行处理的逻辑
+    return res
+  }).catch(e => {
+    console.info("error")
+  })
+}
+
 export const delete_head = (url, params,headers) => {
   return axios.delete(url,
     {

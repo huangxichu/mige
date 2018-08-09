@@ -8,7 +8,6 @@
           </el-col>
           <el-col :span="4">
             状态:<el-select v-model="search.status" placeholder="选择状态" size="mini" style="margin-left: 10px;">
-            <el-option label="全部" value="" key="-1"></el-option>
               <el-option
                 v-for="item in statuses"
                 :key="item.value"
@@ -83,16 +82,16 @@
         :page-sizes="[10, 20, 50,100]"
         :page-size="rows"
         layout="total, sizes, prev, pager, next, jumper"
-        :total="newsCategoryTotal" style="height: 50px;">
+        :total="categoryTotal" style="height: 50px;">
       </el-pagination>
     </el-footer>
-    <el-dialog title="新闻类型" :visible.sync="dialogEditVisible"
+    <el-dialog title="产品分类" :visible.sync="dialogEditVisible"
                :close-on-press-escape="true"
                :close-on-click-modal="false"
                :show-close="true" width="600px">
       <el-form :model="form" label-width="100px" :rules="rules" ref="editFrom">
-        <el-form-item label="类型名称" prop="name">
-          <el-input v-model="form.name" auto-complete="off"  placeholder="请输入类型名称"></el-input>
+        <el-form-item label="分类名称" prop="name">
+          <el-input v-model="form.name" auto-complete="off"  placeholder="请输入分类名称"></el-input>
         </el-form-item>
         <el-form-item label="排序" prop="ide">
           <el-input-number v-model="form.ide"
@@ -109,9 +108,8 @@
 </template>
 
 <script>
-  import {getNewsCategory,saveNewsCategory,deleteNewsCategory} from './api'
+  import {getProductCategory,saveProductCategory,deleteProductCategory} from './api'
   import moment from 'moment'
-
 
   export default {
     data() {
@@ -121,7 +119,7 @@
         dialogListVisible: false,
         tableData: [
         ],
-        newsCategoryTotal:0,
+        categoryTotal:0,
         page:1,
         rows:10,
         search:{
@@ -136,7 +134,7 @@
         },
         rules: {
           name: [
-            { required: true, message: '请输入类型名称', trigger: 'blur' }
+            { required: true, message: '请输入分类名称', trigger: 'blur' }
           ],
           ide: [
             {required: true, message: '请输入排序号码', trigger: 'blur'}
@@ -169,7 +167,7 @@
         let _this = this
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            saveNewsCategory(_this.form,_this).then(function(res) {
+            saveProductCategory(_this.form,_this).then(function(res) {
               if(res.status == '200'){
                 if(res.data.code === '0'){
                   _this.dialogEditVisible = false
@@ -209,7 +207,7 @@
       upStatus(row,status){
         let _this = this
         row.status = status;
-        saveNewsCategory({id:row.id,name:row.name,ide:row.ide,companyCode:row.companyCode,status:row.status},_this).then(function(res) {
+        saveProductCategory({id:row.id,name:row.name,ide:row.ide,companyCode:row.companyCode,status:row.status},_this).then(function(res) {
           if(res.status == '200'){
             if(res.data.code === '0'){
               _this.dialogEditVisible = false
@@ -227,12 +225,12 @@
       },
       removeRow(row){
         let _this = this
-        _this.$confirm('此操作将永久删除该类型, 是否继续?', '提示', {
+        _this.$confirm('此操作将永久删除该分类, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-          deleteNewsCategory({id:row.id},_this).then(function(res) {
+          deleteProductCategory({id:row.id},_this).then(function(res) {
             if(res.status == '200'){
               if(res.data.code === '0'){
                 _this.dialogEditVisible = false
@@ -260,11 +258,11 @@
         params.rows = rows
         _this.page = page
         _this.rows = rows
-        getNewsCategory(params,_this).then(function(res) {
+        getProductCategory(params,_this).then(function(res) {
           if(res.status == '200'){
             if(res.data.code === '0'){
               _this.tableData = res.data.data.content
-              _this.newsCategoryTotal = res.data.data.totalElements
+              _this.categoryTotal = res.data.data.totalElements
             }else{
               var msg = res.data.message;
               _this.$notify.warning({

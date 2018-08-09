@@ -71,8 +71,9 @@ let router = new Router({
       meta:{auth:true},
       children: [
         {path: 'newsCategory', name: '新闻类型', component: SysManage.NewsCategory, type: menuType.left,meta:{auth:true}},
-        {path: 'news', name: '新闻管理', component: SysManage.Article, type: menuType.left,meta:{auth:true}},
-        // {path: 'role', name: '栏目管理', component: SysManage.Article, type: menuType.left,meta:{auth:true}},
+        {path: 'news', name: '新闻资讯', component: SysManage.News, type: menuType.left,meta:{auth:true}},
+        {path: 'productCategory', name: '产品分类', component: SysManage.ProductCategory, type: menuType.left,meta:{auth:true}},
+        {path: 'product', name: '产品管理', component: SysManage.Product, type: menuType.left,meta:{auth:true}},
         {path: 'schedue', name: '排班管理', component: SysManage.SCHEDUE, type: menuType.left,meta:{auth:true}}
       ]
     }
