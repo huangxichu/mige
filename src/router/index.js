@@ -77,7 +77,8 @@ let router = new Router({
         {path: 'dept', name: '部门管理', component: SysManage.Dept, type: menuType.left,meta:{auth:true}},
         {path: 'post', name: '岗位管理', component: SysManage.Post, type: menuType.left,meta:{auth:true}},
         {path: 'employee', name: '员工管理', component: SysManage.Employee, type: menuType.left,meta:{auth:true}},
-        {path: 'message', name: '留言管理', component: SysManage.Message, type: menuType.left,meta:{auth:true}}
+        {path: 'message', name: '留言管理', component: SysManage.Message, type: menuType.left,meta:{auth:true}},
+        {path: 'user', name: '账号管理', component: SysManage.User, type: menuType.left,meta:{auth:true}}
       ]
     }
   ]

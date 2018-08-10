@@ -9,6 +9,7 @@ import Dept from './dept/Dept.vue'
 import Post from './post/Post.vue'
 import Employee from './employee/Employee.vue'
 import Message from './message/Message.vue'
+import User from './user/User.vue'
 
 SysManage.SCHEDUE = SCHEDUE
 SysManage.Article = Article
@@ -20,5 +21,6 @@ SysManage.Dept = Dept
 SysManage.Post = Post
 SysManage.Employee = Employee
 SysManage.Message = Message
+SysManage.User = User
 
 export default SysManage
