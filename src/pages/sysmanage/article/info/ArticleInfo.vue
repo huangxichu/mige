@@ -50,10 +50,10 @@
           <span style="font-size: 14px;">评论区 <span v-if="replyTotal > 0"
                                                    style="font-size: 11px;color: #999;margin-left: 10px;"> {{replyTotal}} 次评论</span></span>
           <el-badge class="item">
-            <el-button size="small" @click="gotoReply()">评论</el-button>
+            <el-button size="mini" @click="gotoReply()">评论</el-button>
           </el-badge>
           <!--<el-badge :value="100" :max="10" class="item">-->
-          <!--<el-button size="small">回复</el-button>-->
+          <!--<el-button size="mini">回复</el-button>-->
           <!--</el-badge>-->
         </div>
         <div v-for="o in replays" :key="o.code" class="text_item">

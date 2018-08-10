@@ -74,7 +74,10 @@ let router = new Router({
         {path: 'news', name: '新闻资讯', component: SysManage.News, type: menuType.left,meta:{auth:true}},
         {path: 'productCategory', name: '产品分类', component: SysManage.ProductCategory, type: menuType.left,meta:{auth:true}},
         {path: 'product', name: '产品管理', component: SysManage.Product, type: menuType.left,meta:{auth:true}},
-        {path: 'schedue', name: '排班管理', component: SysManage.SCHEDUE, type: menuType.left,meta:{auth:true}}
+        {path: 'dept', name: '部门管理', component: SysManage.Dept, type: menuType.left,meta:{auth:true}},
+        {path: 'post', name: '岗位管理', component: SysManage.Post, type: menuType.left,meta:{auth:true}},
+        {path: 'employee', name: '员工管理', component: SysManage.Employee, type: menuType.left,meta:{auth:true}},
+        {path: 'message', name: '留言管理', component: SysManage.Message, type: menuType.left,meta:{auth:true}}
       ]
     }
   ]
