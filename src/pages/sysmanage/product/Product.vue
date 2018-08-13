@@ -524,4 +524,7 @@
     height: 178px;
     display: block;
   }
+  .el-upload__input{
+    display: none!important;
+  }
 </style>

@@ -42,6 +42,10 @@ Vue.prototype.$axios = axios
 Vue.prototype.$companyCode = 'gwHvj2penyCpFW1j'
 Vue.prototype.$jsEncrypt = JsEncrypt
 /* eslint-disable no-new */
+Vue.filter('subStr', function(value,begin,end) {   //全局方法 Vue.filter() 注册一个自定义过滤器,必须放在Vue实例化前面
+  console.info(value)
+  return value.substring(begin, end)
+});
 
 let vue = new Vue({
   el: '#app',
@@ -49,5 +53,7 @@ let vue = new Vue({
   template: '<App/>',
   components: { App }
 })
+
+
 
 export default vue

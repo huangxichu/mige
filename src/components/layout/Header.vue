@@ -5,6 +5,8 @@
     </div>
     <div class="p-header-navbar">
       <ul>
+        <!--<c-menu-item path="/nm" icon="users" name="新闻管理" notooltip/>-->
+        <!--<c-menu-item path="/product" icon="users" name="产品中心" notooltip/>-->
         <c-menu-item path="/sys" icon="users" name="系统管理" notooltip/>
       </ul>
     </div>

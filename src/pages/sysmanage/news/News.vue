@@ -183,6 +183,40 @@
               </el-select>
             </el-form-item>
           </el-tab-pane>
+          <el-tab-pane label="资讯介绍">
+            <el-form-item label="置顶首页" prop="isTop">
+              <el-select v-model="form.isTop"
+                         visible-change="false"
+                         filterable>
+                <el-option
+                  v-for="item in marks"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="导语" prop="introduction">
+              <el-input
+                type="textarea"
+                :autosize="{ minRows: 2, maxRows: 10}"
+                v-model="form.introduction">
+              </el-input>
+            </el-form-item>
+            <el-form-item label="新闻图片">
+              <el-upload
+                action=""
+                class="avatar-uploader"
+                action="https://jsonplaceholder.typicode.com/posts/"
+                :show-file-list="false"
+                :on-success="uploadThumbnailPath"
+                :http-request="handlePost"
+                :before-upload="beforeAvatarUpload">
+                <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+              </el-upload>
+            </el-form-item>
+          </el-tab-pane>
           <el-tab-pane label="资讯内容">
               <vue-editor v-model="form.context" useCustomImageHandler @imageAdded="handleImageAdded"></vue-editor>
           </el-tab-pane>
@@ -211,7 +245,6 @@
         statuses:[{label:'编辑',value:'0'},{label:'发布',value:'1'},{label:'作废',value:'9'}],
         marks:[{label:'否',value:'0'},{label:'是',value:'1'}],
         dialogEditVisible: false,
-        dialogListVisible: false,
         tableData: [],
         total:0,
         page:1,
@@ -230,22 +263,25 @@
           title:'',
           subTitle:'',
           isOriginal:'0',
+          isTop:'0',
+          pic:'',
+          introduction:'',
           sourUrl:'',
           sources:'',
           status:'',
           companyCode:'',
           context:''
         },
+        imageUrl:'',
         rules: {
           title: [{ required: true, message: '请输入资讯标题', trigger: 'blur' }],
           sources: [{ required: true, message: '请输入资讯来源', trigger: 'blur' }],
           isOriginal: [{required: true, message: '请选择是否原创', trigger: 'blur'}],
+          isTop: [{required: true, message: '请选择是否置顶首页', trigger: 'blur'}],
+          introduction: [{required: true, message: '请输入导语', trigger: 'blur'}],
           newCategoryId: [{required: true, message: '请选择新闻类别', trigger: 'blur'}],
           status: [{required: true, message: '请选择状态', trigger: 'blur'}],
         },
-        formLabelWidth: '120px',
-        tableHeight:400,
-        tooltip:true,
         screenHeight: document.body.clientHeight - 50 -60 -130
       }
     },
@@ -352,12 +388,16 @@
           title:'',
           subTitle:'',
           isOriginal:'0',
+          isTop:'0',
+          pic:'',
+          introduction:'',
           sourUrl:'',
           sources:'',
           status:'',
           companyCode:'',
           context:''
         }
+        _this.imageUrl = ''
         //this.$router.push({name:'article-edit'})
         _this.dialogEditVisible = true;
       },
@@ -372,12 +412,16 @@
           title:row.title,
           subTitle:row.subTitle,
           isOriginal:row.isOriginal,
+          isTop:row.isTop,
+          pic:row.pic,
+          introduction:row.introduction,
           sourUrl:row.sourUrl,
           sources:row.sources,
           status:row.status,
           context:row.context,
           companyCode:row.companyCode
         }
+        _this.imageUrl = row.pic
         //this.$router.push({name:'article-edit'})
         _this.dialogEditVisible = true;
       },
@@ -432,6 +476,33 @@
 
         })
       },
+      beforeAvatarUpload(file) {
+        return true;
+      },
+      uploadThumbnailPath(res, file) {
+        this.imageUrl = URL.createObjectURL(file.raw);
+        this.form.pic = file.response.url;
+      },
+      handlePost(item){
+        var _this = this;
+        var formData = new FormData();
+        formData.append('editormd-image-file', item.file)
+        uploadFile(formData).then(function(res){
+          console.info(res)
+          if(res.status === 200){
+            if (res.data.code === '0') {
+              _this.imageUrl = res.data.data;
+              _this.form.pic = res.data.data;
+            } else {
+              _this.$message.error(res.data.message);
+            }
+          }else{
+            _this.$message.error('上传图片失败');
+          }
+        }).catch(function(){
+          _this.$message.error('上传图片失败');
+        })
+      },
       init(){
         var that = this;
         that.loadData({},1,10)
@@ -467,5 +538,35 @@
   }
   #news_table .ql-container{
     height: 410px!important;
+  }
+
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+  }
+
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 178px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+
+  #news_table .avatar {
+    width: 178px;
+    /*height: 178px;*/
+    display: block;
+  }
+  .el-upload__input{
+    display: none!important;
   }
 </style>

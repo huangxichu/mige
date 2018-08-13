@@ -15,8 +15,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!--<a class="navbar-brand" href="#">米格</a>-->
-          <img src="../../assets/img/logo.png" style="height: 50px;width: 75px;">
+          <!--<a class="navbar-brand" href="#">宝庆堂</a>-->
+          <img src="../../assets/img/logo.png" style="height: 50px;width: 50px;">
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -102,9 +102,9 @@
   .navbar-default .navbar-nav > li > a {
     color: #000000!important;
   }
-  .navbar-default .navbar-brand {
-    color: #ffffff!important;
-  }
+  /*.navbar-default .navbar-brand {*/
+    /*color: #ffffff!important;*/
+  /*}*/
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #000000!important;
     background-color: #ffffff!important;

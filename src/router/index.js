@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import { getLoginUser, removeTokenCookie } from '../assets/js/assist'
-import SysManage from '../pages/sysmanage'
+import SysManage from '../pages/sysmanage/index.js'
+import NewsManage from '../pages/sysmanage/news_index.js'
 
 Vue.use(Router)
 
@@ -79,6 +80,17 @@ let router = new Router({
         {path: 'employee', name: '员工管理', component: SysManage.Employee, type: menuType.left,meta:{auth:true}},
         {path: 'message', name: '留言管理', component: SysManage.Message, type: menuType.left,meta:{auth:true}},
         {path: 'user', name: '账号管理', component: SysManage.User, type: menuType.left,meta:{auth:true}}
+      ]
+    },
+    {
+      path: '/nm',
+      name: 'nm',
+      component: SysManage,
+      type: menuType.header,
+      meta:{auth:true},
+      children: [
+        {path: 'newsCategory', name: '新闻类型', component: NewsManage.NewsCategory, type: menuType.left,meta:{auth:true}},
+        {path: 'news', name: '新闻资讯', component: NewsManage.News, type: menuType.left,meta:{auth:true}}
       ]
     }
   ]

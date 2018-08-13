@@ -40,74 +40,94 @@
         </div>
       </div>
     </div>
-    <div class="row" style="margin:10px 5px;">
-      <div class="col-md-3">
+    <div class="row" style="margin:10px 5px;" v-if="products1.length > 0">
+      <div class="col-md-3" v-for="product in products1" :key="product.id">
         <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product1.jpg" alt="规划模型"></a></div>
+          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img :src="product.pic" :alt="product.productName"></a></div>
           <div class="portfolio-title">
-            <h2>规划模型</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product2.jpg" alt="工业机械模型"></a></div>
-          <div class="portfolio-title">
-            <h2>工业机械模型</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product3.jpg" alt="户型模型"></a></div>
-          <div class="portfolio-title">
-            <h2>户型模型</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product4.jpg" alt="工业机械模型"></a></div>
-          <div class="portfolio-title">
-            <h2>工业机械模型</h2>
+            <h2>{{product.productName}}</h2>
           </div>
         </div>
       </div>
     </div>
-    <div class="row" style="margin:10px 5px;">
-      <div class="col-md-3">
+    <div class="row" style="margin:10px 5px;" v-if="products1.length > 0">
+      <div class="col-md-3" v-for="product in products2" :key="product.id">
         <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product5.jpg" alt="住宅模型"></a></div>
+          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img :src="product.pic" :alt="product.productName"></a></div>
           <div class="portfolio-title">
-            <h2>住宅模型</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="/a/product/p1/15.html" target="_blank"><img src="../../assets/img/product6.jpg" alt="壁挂区位模型"></a></div>
-          <div class="portfolio-title">
-            <h2>壁挂区位模型</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product7.jpg" alt="地形地貌沙盘模型"></a></div>
-          <div class="portfolio-title">
-            <h2>地形地貌沙盘模型</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product8.jpg" alt="地产动画"></a></div>
-          <div class="portfolio-title">
-            <h2>地产动画</h2>
+            <h2>{{product.productName}}</h2>
           </div>
         </div>
       </div>
     </div>
+    <!--<div class="row" style="margin:10px 5px;">-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product1.jpg" alt="规划模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>规划模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product2.jpg" alt="工业机械模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>工业机械模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product3.jpg" alt="户型模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>户型模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product4.jpg" alt="工业机械模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>工业机械模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" style="margin:10px 5px;">-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product5.jpg" alt="住宅模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>住宅模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="/a/product/p1/15.html" target="_blank"><img src="../../assets/img/product6.jpg" alt="壁挂区位模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>壁挂区位模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product7.jpg" alt="地形地貌沙盘模型"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>地形地貌沙盘模型</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<div class="product-item">-->
+          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product8.jpg" alt="地产动画"></a></div>-->
+          <!--<div class="portfolio-title">-->
+            <!--<h2>地产动画</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
     <div class="row">
       <div class="col-md-12">
         <div class="module-full-screen-more"><router-link to="/product">更多产品</router-link></div>
@@ -125,7 +145,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="qhd-content">
+        <div class="qhd-content" style="text-align: center;">
           <p>米格数字科技模型馆经过多个春秋洗礼，由原来单一的物理沙盘设计制作演变为高科技三维立体、多媒体投影、虚拟电子沙盘设计制作；三维动画、平面设计；展示展览；园林绿化、城市景观设计多元化公司。</p>
           <p>米格数字科技馆先后成立西安米格、成都米格、上海米格、昆明米格、长沙米格等五家模型制作基地。</p>
           <p>米格人以创新的精神、扎实的技术、精益求精的态度来服务新老客户!</p>
@@ -150,12 +170,12 @@
     </div>
     <div class="row headlines-list-2col clearfix">
       <div class="col-md-6">
-        <div class="headlines-content fadeInUp animated" data-animate="fadeInUp" data-delay="200">
-          <p style="margin-left:5%;"><a href="javascript:;"><img src="../../assets/img/news.jpg" height="217" alt="新闻资讯"></a></p>
-          <h2 style="margin-left:5%;"><a href="javascript:;" target="_blank">打造优质营销理念 从立体模型做起</a></h2>
+        <div class="headlines-content fadeInUp animated" data-animate="fadeInUp" data-delay="200" v-if="topNews != null">
+          <p style="margin-left:5%;"><a href="javascript:;"><img :src="topNews.pic" height="217" alt="新闻资讯"></a></p>
+          <h2 style="margin-left:5%;"><a href="javascript:;" target="_blank">{{topNews.title}}</a></h2>
           <div class="headlines-content-summary" style="margin-left:5%;">
             <div class="qhd-content">
-              <p> 近年来，各行各业在营销方面不断的做出努力，但是，由于模型立体感不强，给销售带来一定影响。作为热销的房地产更是如此，有房地产企业负责人表示，由于模型做的不够好，导致前期营销出现差错，很多业主期待看到更直观的模型，可是，宣传过程中没有该类模型就给营销带来一定的阻碍...</p>
+              <p> {{topNews.introduction}}</p>
             </div>
           </div>
         </div>
@@ -163,49 +183,20 @@
       <div class="col-md-6">
         <div class="headlines-others fadeInUp animated" data-animate="fadeInUp" data-delay="400">
           <div class="entry-list entry-list-time-hl entry-set-time-hl">
-            <div class="entry-item">
+            <div class="entry-item" v-for="item in news" :key="item.id">
               <div class="time">
-                <p class="time-day">20</p>
-                <p class="time-date">2017-10</p>
+                <p class="time-day">{{item.createTimeStr_sub2}}</p>
+                <p class="time-date">{{item.createTimeStr_sub}}</p>
               </div>
               <div class="entry-title">
-                <h2><a href="javascript:;l" target="_blank">沙盘模型的实用价值和艺术收藏价值</a></h2>
+                <h2><a href="javascript:;l" target="_blank">{{item.title}}</a></h2>
               </div>
               <div class="entry-summary">
                 <div class="qhd-content">
-                  <p>沙盘制作是一门艺术，更是一种学问。模型不同于流水线上的物品，能够有统一的尺寸、样式，它们有着不同的造型，甚至是不同的个性。每个模型都是有自己的灵魂，自己的生命的。除了大自然所赋予的属性外...</p>
+                  <p> {{item.introduction}}</p>
                 </div>
               </div>
             </div>
-            <div class="entry-item">
-              <div class="time">
-                <p class="time-day">20</p>
-                <p class="time-date">2017-10</p>
-              </div>
-              <div class="entry-title">
-                <h2><a href="javascript:;" target="_blank">如何看房屋模型</a></h2>
-              </div>
-              <div class="entry-summary">
-                <div class="qhd-content">
-                  <p>沙盘盘模型是展示一商品住宅开发项目整体风貌的绝佳道具，一般来说，模型是比较准确的，但由于以下原因，模型也可能给买房人造成一些误导：　　密度错觉 有不少情形是这样的，沙盘上看起来，楼与楼之间宽松通透，楼间绿化，清新可人，但实际上盖到现房时，才发现楼与楼之间其实非常接近...</p>
-                </div>
-              </div>
-            </div>
-            <div class="entry-item">
-              <div class="time">
-                <p class="time-day">20</p>
-                <p class="time-date">2017-10</p>
-              </div>
-              <div class="entry-title">
-                <h2><a href="javascript:;" target="_blank">模型制作和材料的关系</a></h2>
-              </div>
-              <div class="entry-summary">
-                <div class="qhd-content">
-                  <p>模型制作的材料从早期出土的陶土模型、到早期使用木头、纸质材料，再到现在的有机分子材料、合金材料等，这种变化正是得益于材料业的发展。但是，作为模型制作的专业材料还是屈指可数的，远远不能满足模型制作的要求。从某种意义上说，材料限制着模型的表现形式...</p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -224,9 +215,12 @@
 </template>
 
 <script>
+  import {getHomeProducts,getHomeNews,getHomeTopNews} from './api'
   import myMarquee from '../../components/marquee/Marquee'
   import HomeFooter from '../../components/homelayout/HomeFooter'
   import HomeHeader from '../../components/homelayout/HomeHeader'
+  import moment from 'moment'
+
   export default {
     components: {
       'my-marquee': myMarquee,
@@ -237,32 +231,90 @@
       return {
         innerStyle:'height: 100%;overflow-y: auto;',
         innerHeight: document.body.clientHeight,
-        lists: [
-          '连雨不知春去',
-          '一晴方觉夏深'
-        ],
+        products1:[],
+        split_product:4,
+        products2:[],
+        topNews:null,
+        news:[],
         show_top_btn:2
       }
     },
     methods: {
-      toTop() {
-        document.documentElement.scrollTop = document.body.scrollTop = 0;
+      init_product(params){
+        let _this = this
+        params.companyCode = _this.$companyCode
+        getHomeProducts(params,_this).then(function(res) {
+          if(res.status == '200'){
+            if(res.data.code === '0'){
+              var products = res.data.data
+              for(var i in products){
+                  if(i < _this.split_product){
+                    _this.products1.push(products[i])
+                  }else{
+                    _this.products2.push(products[i])
+                  }
+              }
+            }else{
+//              var msg = res.data.message;
+//              _this.$notify.warning({
+//                title: msg
+//              })
+            }
+          }
+        }).catch(function (err) {
+
+        })
       },
-      scrollToTop() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-        let browserHeight = window.outerHeight;
-        console.info(scrollTop)
-        console.info(browserHeight)
-        if (scrollTop > browserHeight) {
-          this.show_top_btn = 1;
-        } else {
-          this.show_top_btn = 2;
-        }
+      init_news(){
+        let _this = this
+        getHomeTopNews({companyCode :_this.$companyCode},_this).then(function(res) {
+//          console.info(res)
+          if(res.status == '200'){
+            if(res.data.code === '0'){
+              _this.topNews = res.data.data
+            }else{
+//              var msg = res.data.message;
+//              _this.$notify.warning({
+//                title: msg
+//              })
+            }
+          }
+        }).catch(function (err) {
+
+        })
+        getHomeNews({companyCode :_this.$companyCode,page:1,rows:3},_this).then(function(res) {
+//          console.info(res)
+          if(res.status == '200'){
+            if(res.data.code === '0'){
+              var news = res.data.data
+              for(var i in news){
+                var item = news[i]
+                item.createTimeStr = moment(new Date(item.createTime)).format("YYYY-MM-DD HH:mm:ss");
+                item.createTimeStr_sub = item.createTimeStr.substring(0, 7);
+                item.createTimeStr_sub2 = item.createTimeStr.substring(8, 10);
+                _this.news.push(item)
+              }
+            }else{
+//              var msg = res.data.message;
+//              _this.$notify.warning({
+//                title: msg
+//              })
+            }
+          }
+        }).catch(function (err) {
+
+        })
+      },
+      init(){
+        let _this = this
+        _this.init_product({page:1,rows:8})
+        _this.init_news()
       }
     },
     mounted(){
 //      window.addEventListener('scroll', this.scrollToTop())
-      let page = this
+      let _this = this
+      _this.init()
 //      window.addEventListener('scroll',()=>{console.log(window.scrollY)})
     },
     destroyed () {
@@ -435,7 +487,7 @@
     -moz-transition: all 0.3s ease-out 0s;
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
-    height: 150px;
+    height: 250px;
   }
   .portfolio-img a {
     position: relative;
