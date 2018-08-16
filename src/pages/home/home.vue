@@ -1,35 +1,8 @@
 <template>
   <div class="mg_home"  :style="innerStyle">
     <home-header></home-header>
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <!--<ol class="carousel-indicators">-->
+    <home-carousel></home-carousel>
 
-      <!--</ol>-->
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="../../assets/img/bg-1.jpg" style="width: 100%;">
-          <div class="carousel-caption">
-          </div>
-        </div>
-        <div class="item">
-          <img src="../../assets/img/bg-2.jpg" style="width: 100%;">
-          <div class="carousel-caption">
-          </div>
-        </div>
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
     <div class="row"  style="margin-top: 20px!important;">
       <div class="col-md-12">
         <div class="module-full-screen-title">
@@ -40,94 +13,30 @@
         </div>
       </div>
     </div>
-    <div class="row" style="margin:10px 5px;" v-if="products1.length > 0">
-      <div class="col-md-3" v-for="product in products1" :key="product.id">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img :src="product.pic" :alt="product.productName"></a></div>
-          <div class="portfolio-title">
-            <h2>{{product.productName}}</h2>
+    <center>
+      <div style="max-width: 1200px;">
+        <div class="row" style="margin:10px 5px;" v-if="products1.length > 0">
+          <div class="col-md-3" v-for="product in products1" :key="product.id">
+            <div class="product-item">
+              <div class="portfolio-img"><a href="javascript:;" target="_blank"><img :src="product.pic" :alt="product.productName"></a></div>
+              <div class="portfolio-title">
+                <h2>{{product.productName}}</h2>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row" style="margin:10px 5px;" v-if="products1.length > 0">
-      <div class="col-md-3" v-for="product in products2" :key="product.id">
-        <div class="product-item">
-          <div class="portfolio-img"><a href="javascript:;" target="_blank"><img :src="product.pic" :alt="product.productName"></a></div>
-          <div class="portfolio-title">
-            <h2>{{product.productName}}</h2>
+        <div class="row" style="margin:10px 5px;" v-if="products1.length > 0">
+          <div class="col-md-3" v-for="product in products2" :key="product.id">
+            <div class="product-item">
+              <div class="portfolio-img"><a href="javascript:;" target="_blank"><img :src="product.pic" :alt="product.productName"></a></div>
+              <div class="portfolio-title">
+                <h2>{{product.productName}}</h2>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!--<div class="row" style="margin:10px 5px;">-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product1.jpg" alt="规划模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>规划模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product2.jpg" alt="工业机械模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>工业机械模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product3.jpg" alt="户型模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>户型模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product4.jpg" alt="工业机械模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>工业机械模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row" style="margin:10px 5px;">-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product5.jpg" alt="住宅模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>住宅模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="/a/product/p1/15.html" target="_blank"><img src="../../assets/img/product6.jpg" alt="壁挂区位模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>壁挂区位模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product7.jpg" alt="地形地貌沙盘模型"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>地形地貌沙盘模型</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<div class="product-item">-->
-          <!--<div class="portfolio-img"><a href="javascript:;" target="_blank"><img src="../../assets/img/product8.jpg" alt="地产动画"></a></div>-->
-          <!--<div class="portfolio-title">-->
-            <!--<h2>地产动画</h2>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
+        </div>
+    </center>
     <div class="row">
       <div class="col-md-12">
         <div class="module-full-screen-more"><router-link to="/product">更多产品</router-link></div>
@@ -158,56 +67,94 @@
         <div class="module-full-screen-more"><router-link to="/about">了解更多</router-link></div>
       </div>
     </div>
-    <div class="row"  style="margin-top: 20px!important;">
-      <div class="col-md-12">
-        <div class="module-full-screen-title">
-          <h2>新闻资讯</h2>
-          <div class="module-title-content"><i class="mark-left"></i>
-            <h3>NEWS CNTER</h3>
-            <i class="mark-right"></i></div>
-        </div>
-      </div>
-    </div>
-    <div class="row headlines-list-2col clearfix">
-      <div class="col-md-6">
-        <div class="headlines-content fadeInUp animated" data-animate="fadeInUp" data-delay="200" v-if="topNews != null">
-          <p style="margin-left:5%;"><a href="javascript:;"><img :src="topNews.pic" height="217" alt="新闻资讯"></a></p>
-          <h2 style="margin-left:5%;"><a href="javascript:;" target="_blank">{{topNews.title}}</a></h2>
-          <div class="headlines-content-summary" style="margin-left:5%;">
-            <div class="qhd-content">
-              <p> {{topNews.introduction}}</p>
+    <center>
+      <div style="max-width: 1200px;">
+        <div class="row"  style="margin-top: 20px!important;">
+          <div class="col-md-12">
+            <div class="module-full-screen-title">
+              <h2>新闻资讯</h2>
+              <div class="module-title-content"><i class="mark-left"></i>
+                <h3>NEWS CNTER</h3>
+                <i class="mark-right"></i></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="headlines-others fadeInUp animated" data-animate="fadeInUp" data-delay="400">
-          <div class="entry-list entry-list-time-hl entry-set-time-hl">
-            <div class="entry-item" v-for="item in news" :key="item.id">
-              <div class="time">
-                <p class="time-day">{{item.createTimeStr_sub2}}</p>
-                <p class="time-date">{{item.createTimeStr_sub}}</p>
-              </div>
-              <div class="entry-title">
-                <h2><a href="javascript:;l" target="_blank">{{item.title}}</a></h2>
-              </div>
-              <div class="entry-summary">
+        <div class="row headlines-list-2col clearfix">
+          <div class="col-md-6">
+            <div class="headlines-content fadeInUp animated" data-animate="fadeInUp" data-delay="200" v-if="topNews != null">
+              <p style="margin-left:5%;text-align: left;"><a href="javascript:;"><img :src="topNews.pic" height="217" alt="新闻资讯"></a></p>
+              <h2 style="margin-left:5%;text-align: left;"><a href="javascript:;" target="_blank">{{topNews.title}}</a></h2>
+              <div class="headlines-content-summary" style="margin-left:5%;text-align: left;">
                 <div class="qhd-content">
-                  <p> {{item.introduction}}</p>
+                  <p> {{topNews.introduction}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="headlines-others fadeInUp animated" data-animate="fadeInUp" data-delay="400">
+              <div class="entry-list entry-list-time-hl entry-set-time-hl">
+                <div class="entry-item" v-for="item in news" :key="item.id">
+                  <div class="time">
+                    <p class="time-day">{{item.createTimeStr_sub2}}</p>
+                    <p class="time-date">{{item.createTimeStr_sub}}</p>
+                  </div>
+                  <div class="entry-title">
+                    <h2 style="text-align: left;"><a href="javascript:;" target="_blank">{{item.title}}</a></h2>
+                  </div>
+                  <div class="entry-summary">
+                    <div class="qhd-content" style="text-align: left;">
+                      <p> {{item.introduction}}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </center>
     <div class="row">
       <div class="col-md-12">
         <div class="module-full-screen-more"><router-link to="/about">了解更多</router-link></div>
       </div>
     </div>
-    <div class="row" style="margin-top: 20px!important;">
+    <div class="row"  style="margin-top: 20px;">
       <div class="col-md-12">
+        <div class="module-full-screen-title">
+          <h2>在线留言</h2>
+          <div class="module-title-content"><i class="mark-left"></i>
+            <h3>ONLINE MESSAGE</h3>
+            <i class="mark-right"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <div style="max-width: 960px;">
+            <el-form ref="messageForm" :model="message" :rules="messageRules" label-width="80px">
+              <el-form-item label="姓名" prop="relName">
+                <el-input v-model="message.relName"></el-input>
+              </el-form-item>
+              <el-form-item label="联系电话" prop="phone">
+                <el-input v-model="message.phone"></el-input>
+              </el-form-item>
+              <el-form-item label="留言" prop="messageContext">
+                <el-input type="textarea" :rows="7" v-model="message.messageContext"></el-input>
+              </el-form-item>
+            </el-form>
+          </div>
+        </center>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="module-full-screen-more"><a href="javascript:;" @click="messageOnline('messageForm')">留言</a></div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px!important;">
+      <div class="col-md-12" style="padding: 0!important;">
         <home-footer></home-footer>
       </div>
     </div>
@@ -216,18 +163,33 @@
 
 <script>
   import {getHomeProducts,getHomeNews,getHomeTopNews} from './api'
+  import {saveYkMessage} from '../sysmanage/message/api'
   import myMarquee from '../../components/marquee/Marquee'
   import HomeFooter from '../../components/homelayout/HomeFooter'
   import HomeHeader from '../../components/homelayout/HomeHeader'
+  import HomeCarousel from '../../components/homelayout/HomeCarousel'
   import moment from 'moment'
 
   export default {
     components: {
       'my-marquee': myMarquee,
       'home-footer': HomeFooter,
-      'home-header': HomeHeader
+      'home-header': HomeHeader,
+      'home-carousel': HomeCarousel
     },
     data () {
+      var checkPhone = (rule, value, callback) => {
+        if (!value) {
+          return callback(new Error('请输入您的手机号，方便我们联系您'));
+        } else {
+          const reg = /^1[2|3|4|5|6|7|8|9][0-9]\d{8}$/
+          if (reg.test(value)) {
+            callback();
+          } else {
+            return callback(new Error('请输入正确的手机号'));
+          }
+        }
+      };
       return {
         innerStyle:'height: 100%;overflow-y: auto;',
         innerHeight: document.body.clientHeight,
@@ -236,10 +198,42 @@
         products2:[],
         topNews:null,
         news:[],
-        show_top_btn:2
+        show_top_btn:2,
+        message:{},
+        messageRules: {
+          relName: [{ required: true, message: '请输入姓名', trigger: 'blur' }],
+          phone: [{ required: true,validator:checkPhone, trigger: 'blur' }],
+          messageContext: [{ required: true, message: '请输入您给我们的留言', trigger: 'blur' }]
+        }
       }
     },
     methods: {
+      messageOnline(formName){
+        let _this = this
+        _this.$refs[formName].validate((valid) => {
+          if (valid) {
+            _this.message.companyCode = _this.$companyCode
+            saveYkMessage(_this.message,_this).then(function(res) {
+              if(res.status == '200'){
+                if(res.data.code === '0'){
+                  _this.$message({
+                    message: '恭喜您留言成功,我们将尽快联系您。',
+                    type: 'success'
+                  });
+                  _this.message={}
+                }else{
+                  var msg = res.data.message;
+                  _this.$notify.warning({
+                    title: msg
+                  })
+                }
+              }
+            }).catch(function (err) {
+
+            })
+          }
+        });
+      },
       init_product(params){
         let _this = this
         params.companyCode = _this.$companyCode

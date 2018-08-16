@@ -16,7 +16,7 @@ const menuType = {
  * 不做登录校验的路由集合
  * @type {[*]}
  */
-const unLoginCheckRoutes = ['/','/login','/index','/about','/recruit','/contact','/news','/product']
+const unLoginCheckRoutes = ['/','/login','/index','/about','/recruit','/contact','/news','/product','/message','/service']
 
 let router = new Router({
   mode: 'history',
@@ -40,12 +40,24 @@ let router = new Router({
       component: Contact => require(['../pages/contact/Contact'],Contact),
       meta:{auth:false}
     },
-    // {
-    //   path: '/news',
-    //   name: 'News',
-    //   component: News => require(['../pages/news/News'],News),
-    //   meta:{auth:false}
-    // },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message => require(['../pages/message/Message'],Message),
+      meta:{auth:false}
+    },
+    {
+      path: '/service',
+      name: 'Service',
+      component: Service => require(['../pages/service/Service'],Service),
+      meta:{auth:false}
+    },
+    {
+      path: '/news',
+      name: 'News',
+      component: News => require(['../pages/news/News'],News),
+      meta:{auth:false}
+    },
     {
       path: '/product',
       name: 'Product',

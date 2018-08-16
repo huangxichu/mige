@@ -1,12 +1,11 @@
 <template>
   <div class="mg_about"  :style="innerStyle">
+    <home-header></home-header>
+    <home-carousel></home-carousel>
     <table width="980" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tbody>
       <tr>
         <el-container>
-          <el-header style="height: 597px!important;">
-            <home-header></home-header>
-          </el-header>
           <el-main class="about_main">
             <el-container style="margin-top: 0px!important;">
               <el-aside width="250px">
@@ -56,23 +55,27 @@
               </el-main>
             </el-container>
           </el-main>
-          <el-footer>
-            <home-footer></home-footer>
-          </el-footer>
         </el-container>
       </tr>
       </tbody>
     </table>
+    <div class="row" style="margin-top: 20px!important;">
+      <div class="col-md-12" style="padding: 0!important;">
+        <home-footer></home-footer>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import HomeFooter from '../../components/homelayout/HomeFooter'
   import HomeHeader from '../../components/homelayout/HomeHeader'
+  import HomeCarousel from '../../components/homelayout/HomeCarousel'
   export default {
     components: {
       'home-footer': HomeFooter,
-      'home-header': HomeHeader
+      'home-header': HomeHeader,
+      'home-carousel': HomeCarousel
     },
     data () {
       return {

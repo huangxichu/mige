@@ -4,7 +4,8 @@ const baseUrl = '/api'
 
 export const urls = {
   getPageMessage:baseUrl+'/message/page',
-  saveMessage:baseUrl+'/message/save'
+  saveMessage:baseUrl+'/message/save',
+  saveYkMessage:baseUrl+'/message/yk/save'
 }
 
 
@@ -19,6 +20,12 @@ export const saveMessage = (params,that) => {
   var user = getLoginUser()
   return post_head(urls.saveMessage,params, {
     'token': user.token
+  });
+}
+
+export const saveYkMessage = (params,that) => {
+  return post_head(urls.saveYkMessage,params, {
+
   });
 }
 

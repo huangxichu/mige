@@ -1,69 +1,40 @@
 <template>
   <div class="mg_about"  :style="innerStyle">
-    <table width="980" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
-      <tbody>
-      <tr>
-        <el-container>
-          <el-header style="height: 597px!important;">
-            <home-header></home-header>
-          </el-header>
-          <el-main class="about_main">
-            <el-container style="margin-top: 0px!important;">
-              <el-aside width="250px">
-                <div>
-                  <ul>
-                    <li><img src="../../assets/img/contact_menu_header.jpg"></li>
-                    <li class="category" @click="changePage(1)">联系方式</li>
-                    <li class="category" @click="changePage(2)">地理位置</li>
-                  </ul>
-                </div>
-              </el-aside>
-              <el-main>
-                <div v-if="curr_about_page == 1">
-                  <el-breadcrumb separator="/">
-                    <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/contact' }">联系我们</el-breadcrumb-item>
-                    <el-breadcrumb-item>联系方式</el-breadcrumb-item>
-                  </el-breadcrumb>
-                  <div class="qhd-content" style="margin-top: 20px;">
-                    <p><span style="font-weight: 600;">联系电话：</span>000-84593781</p>
-                    <p><span style="font-weight: 600;">联系手机：</span>13725222222</p>
-                    <p><span style="font-weight: 600;">联系地址：</span>湖南省长沙市五一广场 </p>
-                    <p><span style="font-weight: 600;">公司邮箱：</span>xxxxxxx@QQ.com</p>
-                    <p><span style="font-weight: 600;">公司官网：</span>www.xxx.com</p>
-                    <p>&nbsp;</p>
-                  </div>
-                </div>
-                <div v-if="curr_about_page == 2">
-                  <el-breadcrumb separator="/">
-                    <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/contact' }">联系我们</el-breadcrumb-item>
-                    <el-breadcrumb-item>地理位置</el-breadcrumb-item>
-                  </el-breadcrumb>
-                  <my-map></my-map>
-                </div>
-              </el-main>
-            </el-container>
-          </el-main>
-          <el-footer>
-            <home-footer></home-footer>
-          </el-footer>
-        </el-container>
-      </tr>
-      </tbody>
-    </table>
+    <home-header></home-header>
+    <home-carousel></home-carousel>
+    <center>
+      <div style="max-width: 1200px;">
+        <my-map></my-map>
+        <div style="text-align: left;font-size: 14px;margin-bottom: 0px;padding-top: 45px;padding-bottom: 15px;">
+          <p style="padding: 5px;">赣州宝庆堂参茸店 </p>
+          <p style="padding: 5px;">联系人：赵经理</p>
+          <p style="padding: 5px;">电话：0797-8680908/18046774189</p>
+          <p style="padding: 5px;">邮箱：439616593@qq.com</p>
+          <p style="padding: 5px;">邮编：341000</p>
+          <p style="padding: 5px;">网址：www.xxx.com</p>
+          <p style="padding: 5px;">地址：赣州市章贡区贸易广场中心街</p>
+        </div>
+      </div>
+    </center>
+    <div class="row" style="margin-top: 20px!important;">
+      <div class="col-md-12" style="padding: 0!important;">
+        <home-footer></home-footer>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import HomeFooter from '../../components/homelayout/HomeFooter'
   import HomeHeader from '../../components/homelayout/HomeHeader'
+  import HomeCarousel from '../../components/homelayout/HomeCarousel'
   import Map from '../../components/homelayout/Map'
   export default {
     components: {
       'my-map': Map,
       'home-footer': HomeFooter,
-      'home-header': HomeHeader
+      'home-header': HomeHeader,
+      'home-carousel': HomeCarousel
     },
     data () {
       return {
@@ -79,9 +50,9 @@
       },
       map(){
       }
+
     },
     mounted(){
-
     }
   }
 </script>

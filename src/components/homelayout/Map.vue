@@ -15,8 +15,7 @@
     },
     mounted(){
       var map = new BMap.Map("allmap");//请注意这段
-      var x=112.983037,y=28.201199;
-
+      var x=114.963503,y=25.843465;
       map.centerAndZoom(new BMap.Point(x, y), 15);// 初始化地图,设置中心点坐标和地图级别
       map.addControl(new BMap.MapTypeControl({//添加地图类型控件
         mapTypes:[
