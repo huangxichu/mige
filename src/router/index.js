@@ -29,7 +29,7 @@ let router = new Router({
       meta:{auth:false}
     },
     {
-      path: '/recruit',
+      path: '/recruit/:index',
       name: 'Recruit',
       component: Recruit => require(['../pages/recruit/recruit'],Recruit),
       meta:{auth:false}
@@ -65,7 +65,7 @@ let router = new Router({
       meta:{auth:false}
     },
     {
-      path: '/about',
+      path: '/about/:index',
       name: 'About',
       component: About => require(['../pages/about/about'],About),
       meta:{auth:false}

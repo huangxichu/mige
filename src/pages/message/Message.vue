@@ -203,4 +203,8 @@
     background-color: #664342;
     font-weight: 600;
   }
+  .row{
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
 </style>

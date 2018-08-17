@@ -7,9 +7,9 @@
         <section class="content float-right">
           <section class="page-title page-title-inner clearfix">
             <div class="breadcrumbs float-left" skinobjectzone="HtmlBreadCrumb_2918">
-              <span>当前位置：</span><a href="http://www.gzbqt.com/">首页</a> &gt;
+              <span>当前位置：</span><router-link to="/index">首页</router-link> &gt;
               <a href="javascript:;">公司介绍</a> &gt;
-              <a href="javascript:;">公司简介</a>
+              <a href="javascript:;">{{curr_about_page == 1 ? '公司简介' : (curr_about_page == '2' ? '公司人才' : '企业文化')}}</a>
             </div>
             <!--<div class="page-name float-left">-->
               <!--<h2>产品一类</h2>-->
@@ -44,7 +44,7 @@
           <section class="page-menu" skinobjectzone="menu_3101">
             <div class="page-menu-content">
               <ul>
-                <li class="current" @click="changePage(1)"><a href="javascript:;" style="text-decoration: none;">公司简介</a><i></i></li>
+                <li   @click="changePage(1)"><a href="javascript:;" style="text-decoration: none;">公司简介</a><i></i></li>
                 <li class="" @click="changePage(2)"><a href="javascript:;"  style="text-decoration: none;">公司人才</a><i></i></li>
                 <li class="" @click="changePage(3)"><a href="javascript:;"  style="text-decoration: none;">企业文化</a><i></i></li>
               </ul>
@@ -84,6 +84,13 @@
       changePage(value){
         var page = this
         page.curr_about_page = value
+      }
+    },
+    mounted(){
+      let _this = this
+      var index = _this.$route.params.index
+      if (index != undefined && index != '') {
+        _this.curr_about_page = index
       }
     }
   }
@@ -135,11 +142,11 @@
   }
   .mg_about .content.float-right {
     border-left: 1px solid #E5E5E5;
-    padding-left: 50px;
+    padding-left: 10px;
   }
   .mg_about .content {
-    width: 750px;
-    padding-top: 45px;
+    width: 800px;
+    padding-top: 0px;
     padding-bottom: 65px;
     _overflow: hidden;
   }
@@ -149,7 +156,7 @@
   }
   .mg_about .sidebar {
     width: 280px;
-    padding: 45px 0 65px;
+    padding: 0px 0 65px;
   }
   .mg_about .float-left {
     float: left;
@@ -264,5 +271,15 @@
     .mg_about .page-title-inner {
       display: none;
     }
+
+  }
+  @media screen and (min-width: 1200px) {
+    .mg_about .main {
+      margin-top: 30px;
+    }
+  }
+  .row{
+    margin-right: 0!important;
+    margin-left: 0!important;
   }
 </style>

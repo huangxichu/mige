@@ -157,4 +157,8 @@
     line-height: 1.8;
     font-size: 14px;
   }
+  .row{
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
 </style>

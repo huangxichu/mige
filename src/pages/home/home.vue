@@ -627,4 +627,8 @@
     overflow: hidden;
     background: url(../../assets/img/icon-gotop-fixed.gif) no-repeat center;
   }
+  .row{
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
 </style>

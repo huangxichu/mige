@@ -5,7 +5,7 @@
         <!--<div style="float: right;font-size: 12px;"><span onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.xxxx.com');" style="CURSOR: hand">设为首页</span>　┃  <router-link to="/contact">联系我们</router-link>　┃  <span style="CURSOR:hand" onclick="window.external.addFavorite('http://www.xxxx.com','湖南米格模型设计有限公司')">加入收藏</span></div>-->
       <!--</div>-->
     <!--</el-header>-->
-    <nav class="navbar navbar-default" style="width: 100%;margin-bottom: 0!important;">
+    <nav class="navbar navbar-default" style="width: 100%;">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -23,12 +23,30 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><router-link to="/index">首页 <span class="sr-only">(current)</span></router-link></li>
-            <li><router-link to="/about">公司介绍</router-link></li>
+            <!--<li><router-link to="/about/1">公司介绍</router-link></li>-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><router-link to="/about/1">公司介绍 </router-link></a>
+              <ul class="dropdown-menu">
+                <li @click="changeAboutPage(1)"><a href="javascript:;">公司简介</a></li>
+                <li role="separator" class="divider"></li>
+                <li @click="changeAboutPage(2)"><a href="javascript:;">公司人才</a></li>
+                <li role="separator" class="divider"></li>
+                <li @click="changeAboutPage(3)"><a href="javascript:;">企业文化</a></li>
+              </ul>
+            </li>
             <li><router-link to="/news">新闻资讯</router-link></li>
             <li><router-link to="/product">产品中心</router-link></li>
             <li><router-link to="/service">服务项目</router-link></li>
             <li><router-link to="/message">在线留言</router-link></li>
-            <li><router-link to="/recruit">人才招聘</router-link></li>
+            <!--<li><router-link to="/recruit">人才招聘</router-link></li>-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><router-link to="/recruit/1">人才招聘 </router-link></a>
+              <ul class="dropdown-menu">
+                <li @click="changeRecruitPage(1)"><a href="javascript:;">人才理念</a></li>
+                <li role="separator" class="divider"></li>
+                <li @click="changeRecruitPage(2)"><a href="javascript:;">招聘岗位</a></li>
+              </ul>
+            </li>
             <li><router-link to="/contact">联系我们</router-link></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -74,6 +92,14 @@
             alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请进入新网站后使用Ctrl+D进行添加");
           }
         }
+      },
+      changeAboutPage(value){
+        let routeData = this.$router.resolve('/about/'+value)
+        window.open(routeData.href, '_self')
+      },
+      changeRecruitPage(value){
+        let routeData = this.$router.resolve('/recruit/'+value)
+        window.open(routeData.href, '_self')
       }
     },
     data(){
@@ -143,5 +169,31 @@
   }
   .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: #ffffff!important;
+  }
+  .home_header a{
+    color: #000000;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navbar-header {
+      text-align: center;
+      margin-left: 44px!important;
+    }
+    .navbar{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .navbar .nav > li .dropdown-menu {
+      margin: 0;
+    }
+    .navbar .nav > li:hover .dropdown-menu {
+      display: block;
+    }
+    .navbar{
+      margin-bottom: 0!important;
+    }
   }
 </style>

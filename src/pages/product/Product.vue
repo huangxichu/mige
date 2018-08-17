@@ -422,4 +422,8 @@
   .portfolio-title h2 a{
     color: black;
   }
+  .row{
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
 </style>
